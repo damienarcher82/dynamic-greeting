@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Greeting</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <script>
+        function getGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+            return greeting;
+        }
+
+        document.getElementById("greeting").textContent = getGreeting();
+    </script>
+</body>
+</html>
